@@ -59,9 +59,6 @@ return {
                 capabilities = capabilities,
             })
 
-            -- lspconfig["checkmake"].setup({
-            --     capabilities = capabilities,
-            -- })
         end
     },
     {
@@ -72,7 +69,6 @@ return {
                 "rust_analyzer",
                 "clangd",
                 "basedpyright",
-                "checkmake",
             },
             automatic_installation = true,
         },
