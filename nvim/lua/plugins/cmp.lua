@@ -15,6 +15,12 @@ return {
                 enabled = true,
             },
 
+            keymap = {
+                preset = "default",
+                ["<C-j>"] = { "select_next", "fallback" },
+                ["<C-k>"] = { "select_prev", "fallback" },
+                ["<C-space>"] = { "accept", "fallback" },
+            },
             completion = {
                 accept = {
                     auto_brackets = { enabled = true },
@@ -22,7 +28,11 @@ return {
 
                 documentation = {
                     auto_show = true,
-
+                },
+                list = {
+                    selection = {
+                        auto_insert = false,
+                    },
                 },
             },
         }

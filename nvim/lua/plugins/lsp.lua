@@ -51,9 +51,17 @@ return {
             lspconfig["rust_analyzer"].setup({
                 capabilities = capabilities,
                 on_attach = function(client, bufnr)
-                    vim.lsp.inlay_hint.enable(true, {bufnr = bufnr })
+                    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
                 end,
             })
+
+            lspconfig["basedpyright"].setup({
+                capabilities = capabilities,
+            })
+
+            -- lspconfig["checkmake"].setup({
+            --     capabilities = capabilities,
+            -- })
         end
     },
     {
@@ -64,6 +72,7 @@ return {
                 "rust_analyzer",
                 "clangd",
                 "basedpyright",
+                "checkmake",
             },
             automatic_installation = true,
         },
