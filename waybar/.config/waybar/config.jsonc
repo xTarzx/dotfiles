@@ -1,0 +1,115 @@
+{
+    "margin-top": 1,
+    "reload_style_on_change": true,
+    "modules-left": [
+        "group/workspace",
+    ],
+    "modules-center": [
+        "group/centered",
+    ],
+    "modules-right": [
+        "group/stats"
+    ],
+    "group/workspace": {
+        "orientation": "horizontal",
+        "modules": [
+            "hyprland/workspaces",
+            "hyprland/window",
+            "hyprland/submap"
+        ],
+    },
+    "group/centered": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock",
+        ],
+    },
+    "group/stats": {
+        "orientation": "horizontal",
+        "modules": [
+            "wireplumber",
+            "network#wlan",
+            "network",
+            "battery",
+        ],
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "〇",
+        },
+    },
+    "hyprland/window": {
+        "format": "{class}: {title}",
+        "rewrite": {
+            "^: (.*)$": "$1",
+        },
+        // "max-length": 80,
+    },
+    "hyprland/submap": {
+        "always-on": false,
+        "default-submap": "default",
+        "format": "<b><span foreground='#ff004c'>mode:</span> {}</b>",
+    },
+    "network": {
+        "interval": 10,
+        "interface": "enp7s0",
+        "format": "{ifname} {bandwidthDownBytes}",
+        "format-disconnected": "disconnected",
+    },
+    "network#wlan": {
+        "interval": 10,
+        "interface": "wlp8s0",
+        "format": "{essid} {bandwidthDownBytes}",
+        "format-disconnected": "disconnected",
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 20,
+        },
+        "format": "%{icon}{capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+    },
+    "clock": {
+        "interval": 1,
+        "format": "<b>{:%H:%M}</b>",
+        "format-alt": "<b>{:%a %Y-%m-%d %H:%M:%S}</b>",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span foreground='#ff004c'>{}</span>",
+                "days": "<span>{}</span>",
+                "weeks": "<span foreground='#2c2c38'>{}</span>",
+                "weekdays": "<span foreground='#7d12ff'>{}</span>",
+                "today": "<span underline-color='#7d12ff' foreground='#ff004c'><b><u>{}</u></b></span>",
+            },
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+        },
+        "smooth-scrolling-threshold": 2.3,
+    },
+    "wireplumber": {
+        "format-muted": "muted",
+    },
+}
