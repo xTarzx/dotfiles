@@ -28,13 +28,18 @@
         "orientation": "horizontal",
         "modules": [
             "wireplumber",
+            "custom/separator",
+            "backlight",
+            "custom/separator",
             "network#wlan",
+            "custom/separator",
             "network",
+            "custom/separator",
             "battery",
         ],
     },
     "hyprland/workspaces": {
-        "format": "{icon}",
+        "format": "<big><b>{icon}</b></big>",
         "format-icons": {
             "1": "一",
             "2": "二",
@@ -63,13 +68,13 @@
     "network": {
         "interval": 10,
         "interface": "enp7s0",
-        "format": "{ifname} {bandwidthDownBytes}",
-        "format-disconnected": "disconnected",
+        "format": " {ifname} {bandwidthDownBytes}",
+        "format-disconnected": " disconnected",
     },
     "network#wlan": {
         "interval": 10,
         "interface": "wlp8s0",
-        "format": "{essid} {bandwidthDownBytes}",
+        "format": " {essid} {bandwidthDownBytes}",
         "format-disconnected": "disconnected",
     },
     "battery": {
@@ -90,7 +95,7 @@
         "interval": 1,
         "format": "<b>{:%H:%M}</b>",
         "format-alt": "<b>{:%a %Y-%m-%d %H:%M:%S}</b>",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "tooltip-format": "<big><span foreground='#ff004c'></span>{:%d %B %Y}</big>\n<tt>{calendar}</tt>",
         "calendar": {
             "mode": "year",
             "mode-mon-col": 3,
@@ -99,11 +104,12 @@
                 "days": "<span>{}</span>",
                 "weeks": "<span foreground='#2c2c38'>{}</span>",
                 "weekdays": "<span foreground='#7d12ff'>{}</span>",
-                "today": "<span underline-color='#7d12ff' foreground='#ff004c'><b><u>{}</u></b></span>",
+                "today": "<span underline-color='#7d12ff' foreground='#ff004c'><b>{}</b></span>",
             },
         },
         "actions": {
             "on-click-right": "mode",
+            "on-click-middle": "shift_reset",
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down",
         },
@@ -111,5 +117,10 @@
     },
     "wireplumber": {
         "format-muted": "muted",
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false,
     },
 }
