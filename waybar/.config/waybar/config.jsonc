@@ -76,6 +76,7 @@
         "interface": "wlp8s0",
         "format": " {essid} {bandwidthDownBytes}",
         "format-disconnected": "disconnected",
+        "on-click": "networkmanager_dmenu",
     },
     "battery": {
         "states": {
