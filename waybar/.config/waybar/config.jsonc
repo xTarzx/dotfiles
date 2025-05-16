@@ -1,127 +1,125 @@
-{
-    "margin-top": 1,
-    "reload_style_on_change": true,
-    "modules-left": [
-        "group/workspace",
-    ],
-    "modules-center": [
-        "group/centered",
-    ],
-    "modules-right": [
-        "group/stats"
-    ],
-    "group/workspace": {
-        "orientation": "horizontal",
-        "modules": [
-            "hyprland/workspaces",
-            "hyprland/window",
-            "hyprland/submap"
+[
+    {
+        "margin-top": 1,
+        "reload_style_on_change": true,
+        "include": [
+            "~/.config/waybar/modules.jsonc"
         ],
-    },
-    "group/centered": {
-        "orientation": "horizontal",
-        "modules": [
-            "clock",
+        "modules-left": [
+            "group/workspace",
         ],
-    },
-    "group/stats": {
-        "orientation": "horizontal",
-        "modules": [
-            "wireplumber",
-            "custom/separator",
-            "backlight",
-            "custom/separator",
-            "network#wlan",
-            "custom/separator",
-            "network",
-            "custom/separator",
-            "battery",
+        "modules-center": [
+            "group/centered",
         ],
-    },
-    "hyprland/workspaces": {
-        "format": "<big><b>{icon}</b></big>",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "〇",
+        "modules-right": [
+            "group/stats"
+        ],
+        "group/workspace": {
+            "orientation": "horizontal",
+            "modules": [
+                "hyprland/workspaces",
+                "hyprland/window",
+                "hyprland/submap"
+            ],
         },
-    },
-    "hyprland/window": {
-        "format": "{class}: {title}",
-        "rewrite": {
-            "^: (.*)$": "$1",
+        "group/centered": {
+            "orientation": "horizontal",
+            "modules": [
+                "clock",
+            ],
         },
-        // "max-length": 80,
-    },
-    "hyprland/submap": {
-        "always-on": false,
-        "default-submap": "default",
-        "format": "<b><span foreground='#ff004c'>mode:</span> {}</b>",
-    },
-    "network": {
-        "interval": 10,
-        "interface": "enp7s0",
-        "format": " {ifname} {bandwidthDownBytes}",
-        "format-disconnected": " disconnected",
-    },
-    "network#wlan": {
-        "interval": 10,
-        "interface": "wlp8s0",
-        "format": " {essid} {bandwidthDownBytes}",
-        "format-disconnected": "disconnected",
-        "on-click": "networkmanager_dmenu",
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 20,
+        "group/stats": {
+            "orientation": "horizontal",
+            "modules": [
+                "wireplumber",
+                "custom/separator",
+                "backlight",
+                "custom/separator",
+                "network#wlan",
+                "custom/separator",
+                "network",
+                "custom/separator",
+                "battery",
+            ],
         },
-        "format": "%{icon}{capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-    },
-    "clock": {
-        "interval": 1,
-        "format": "<b>{:%H:%M}</b>",
-        "format-alt": "<b>{:%a %Y-%m-%d %H:%M:%S}</b>",
-        "tooltip-format": "<big><span foreground='#ff004c'></span>{:%d %B %Y}</big>\n<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "format": {
-                "months": "<span foreground='#ff004c'>{}</span>",
-                "days": "<span>{}</span>",
-                "weeks": "<span foreground='#2c2c38'>{}</span>",
-                "weekdays": "<span foreground='#7d12ff'>{}</span>",
-                "today": "<span underline-color='#7d12ff' foreground='#ff004c'><b>{}</b></span>",
+        "hyprland/workspaces": {
+            "format": "<big><b>{icon}</b></big>",
+            "format-icons": {
+                "1": "一",
+                "2": "二",
+                "3": "三",
+                "4": "四",
+                "5": "五",
+                "6": "六",
+                "7": "七",
+                "8": "八",
+                "9": "九",
+                "10": "〇",
             },
         },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-middle": "shift_reset",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down",
+        "hyprland/window": {
+            "format": "{class}: {title}",
+            "rewrite": {
+                "^: (.*)$": "$1",
+            },
+            // "max-length": 80,
         },
-        "smooth-scrolling-threshold": 2.3,
-    },
-    "wireplumber": {
-        "format-muted": "muted",
-    },
-    "custom/separator": {
-        "format": "|",
-        "interval": "once",
-        "tooltip": false,
-    },
-}
+        "hyprland/submap": {
+            "always-on": false,
+            "default-submap": "default",
+            "format": "<b><span foreground='#ff004c'>mode:</span> {}</b>",
+        },
+        "network": {
+            "interval": 10,
+            "interface": "enp7s0",
+            "format": " {ifname} {bandwidthDownBytes}",
+            "format-disconnected": " disconnected",
+        },
+        "network#wlan": {
+            "interval": 10,
+            "interface": "wlp8s0",
+            "format": " {essid} {bandwidthDownBytes}",
+            "format-disconnected": "disconnected",
+            "on-click": "networkmanager_dmenu",
+        },
+        "battery": {
+            "states": {
+                "warning": 30,
+                "critical": 20,
+            },
+            "format": "%{icon}{capacity}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+        },
+        "wireplumber": {
+            "format-muted": "muted",
+        },
+        "custom/separator": {
+            "format": "|",
+            "interval": "once",
+            "tooltip": false,
+        },
+    }
+    // {
+    //     "margin-top": 1,
+    //     "output": "!eDP-1",
+    //     "reload_style_on_change": true,
+    //     "include": [
+    //         "~/.config/waybar/modules.jsonc"
+    //     ],
+    //     "modules-center": [
+    //         "group/centered",
+    //     ],
+    //     "group/centered": {
+    //         "orientation": "horizontal",
+    //         "modules": [
+    //             "clock",
+    //         ],
+    //     },
+    // }
+]
