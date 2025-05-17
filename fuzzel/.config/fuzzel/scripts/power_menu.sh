@@ -2,13 +2,14 @@
 
 OPTIONS=$(cat <<EOF
 shutdown
+suspend
 reboot
 logout
 lock
 EOF
 )
 
-CHOICE="$(printf "$OPTIONS" | fuzzel -d -l 4)"
+CHOICE="$(printf "$OPTIONS" | fuzzel -d -l 5)"
 
 
 confirm () {
@@ -20,6 +21,8 @@ case $CHOICE in
         if [[ "$(confirm "shutdown")" == "yes" ]] then
             poweroff
         fi;;
+    "suspend")
+            systemctl suspend;;
     "reboot")
         if [[ "$(confirm "reboot")" == "yes" ]] then
             reboot

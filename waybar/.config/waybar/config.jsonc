@@ -34,6 +34,7 @@
                 "wireplumber",
                 "custom/separator",
                 "backlight",
+                "custom/nosleep",
                 "custom/separator",
                 "network#wlan",
                 "custom/separator",
@@ -87,7 +88,7 @@
                 "warning": 30,
                 "critical": 20,
             },
-            "format": "%{icon}{capacity}%",
+            "format": "{icon} {capacity}%",
             "format-icons": [
                 "",
                 "",
@@ -97,12 +98,34 @@
             ],
         },
         "wireplumber": {
-            "format-muted": "muted",
+            "format": "{icon} {volume}%",
+            "format-muted": " {volume}%",
+            "format-icons": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "backlight": {
+            "format": "{icon} {percent}%",
+            "format-icons": [
+                "󰃞",
+                "󰃟",
+                "󰃠"
+            ],
         },
         "custom/separator": {
             "format": "|",
             "interval": "once",
             "tooltip": false,
+        },
+
+        "custom/nosleep": {
+            "format": "{}",
+            "exec": "$HOME/.config/waybar/scripts/check_idle.sh",
+            "on-click": "$HOME/.config/waybar/scripts/toggle_idle.sh",
+            "tooltip": false,
+            "signal": 10,
         },
     }
     // {
