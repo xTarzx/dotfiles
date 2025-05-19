@@ -71,6 +71,8 @@ require("conform").setup({
         bash = { "beautysh" },
         python = { "black" },
         javascriptreact = { "prettier" },
+        -- sql = { "sqlfmt" },
+        -- mysql = { "sqlfmt" },
     },
 })
 

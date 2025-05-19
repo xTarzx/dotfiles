@@ -81,7 +81,8 @@
             "interface": "wlp8s0",
             "format": " {essid} {bandwidthDownBytes}",
             "format-disconnected": "disconnected",
-            "on-click": "networkmanager_dmenu",
+            // "on-click": "networkmanager_dmenu",
+            "on-click": "iwmenu -l custom --launcher-command 'fuzzel --dmenu -a top-right -w 42'",
         },
         "battery": {
             "states": {

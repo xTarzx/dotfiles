@@ -93,9 +93,10 @@ return {
             lspconfig["yamlls"].setup({
                 capabilities = capabilities,
             })
-            lspconfig["sqlls"].setup({
-                capabilities = capabilities,
-            })
+            -- lspconfig["sqlls"].setup({
+            --     capabilities = capabilities,
+            --     filetypes = {"sql", "mysql"},
+            -- })
             lspconfig["cssls"].setup({
                 capabilities = capabilities,
             })
@@ -121,7 +122,7 @@ return {
                 "cmake",
                 "glsl_analyzer",
                 "yamlls",
-                "sqlls",
+                -- "sqlls",
                 "cssls",
                 "hyprls",
                 "jsonls",
