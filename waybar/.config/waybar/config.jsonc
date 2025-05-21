@@ -14,6 +14,20 @@
         "modules-right": [
             "group/stats"
         ],
+        "group/traydrawer": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-left-to-right": false,
+            },
+            "modules": [
+                "custom/nosleep",
+                "tray"
+            ],
+        },
+        "tray": {
+            "icon-size": 19,
+            "spacing": 4,
+        },
         "group/workspace": {
             "orientation": "horizontal",
             "modules": [
@@ -40,7 +54,7 @@
                 "wireplumber",
                 "custom/separator",
                 "backlight",
-                "custom/nosleep",
+                "group/traydrawer",
                 "custom/separator",
                 "network#wlan",
                 "custom/separator",
@@ -86,7 +100,7 @@
             "interval": 10,
             "interface": "wlp8s0",
             "format": " {essid} {bandwidthDownBytes}",
-            "format-disconnected": "disconnected",
+            "format-disconnected": " disconnected",
             // "on-click": "networkmanager_dmenu",
             "on-click": "iwmenu -l custom --launcher-command 'fuzzel --dmenu -a top-right -w 42'",
         },
@@ -129,7 +143,6 @@
             "interval": "once",
             "tooltip": false,
         },
-
         "custom/nosleep": {
             "format": "{}",
             "exec": "$HOME/.config/waybar/scripts/check_idle.sh",
