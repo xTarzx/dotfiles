@@ -31,6 +31,12 @@
         "group/stats": {
             "orientation": "horizontal",
             "modules": [
+                "cpu",
+                "custom/separator",
+                "memory",
+                "custom/separator",
+                "disk",
+                "custom/separator",
                 "wireplumber",
                 "custom/separator",
                 "backlight",
@@ -114,6 +120,9 @@
                 "󰃟",
                 "󰃠"
             ],
+        },
+        "disk": {
+            "format": "{free}/{total}",
         },
         "custom/separator": {
             "format": "|",
