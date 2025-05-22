@@ -73,9 +73,19 @@ window#waybar.hidden {
 }
 
 
-#traydrawer {
-    margin-left: 4px;
+@keyframes anim-rotate2 {
+    0% {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%);
+    }
+
+    100% {
+        background: linear-gradient(360deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%);
+
+    }
 }
+
+/* #traydrawer { */
+/* } */
 
 #tray {
     padding: 0px 8px;
@@ -99,7 +109,7 @@ window#waybar.hidden {
 
     /* box-shadow: inset 0px 1px 9px 1px rgba(125,18,255,1.0); */
     /* background: linear-gradient(90deg, rgba(125, 18, 255, 0.3) 0%, rgba(255, 0, 76, 0.3) 100%); */
-    animation-name: anim-rotate;
+    animation-name: anim-rotate2;
     animation-timing-function: linear;
     animation-duration: 0.4s;
     animation-iteration-count: infinite;

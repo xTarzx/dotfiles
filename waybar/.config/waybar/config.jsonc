@@ -54,6 +54,7 @@
                 "wireplumber",
                 "custom/separator",
                 "backlight",
+                "custom/separator",
                 "group/traydrawer",
                 "custom/separator",
                 "network#wlan",
