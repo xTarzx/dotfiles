@@ -99,7 +99,7 @@
         },
         "network#wlan": {
             "interval": 10,
-            "interface": "wlp8s0",
+            "interface": "wlan0",
             "format": " {essid} {bandwidthDownBytes}",
             "format-disconnected": " disconnected",
             // "on-click": "networkmanager_dmenu",
@@ -126,7 +126,8 @@
                 "",
                 "",
                 ""
-            ]
+            ],
+            "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         },
         "backlight": {
             "format": "{icon} {percent}%",
