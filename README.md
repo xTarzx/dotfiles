@@ -1,3 +1,3 @@
 # dotfiles
 
-managed using [https://www.gnu.org/software/stow/](stow)
+managed using [stow](https://www.gnu.org/software/stow/)
